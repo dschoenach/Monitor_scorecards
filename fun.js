@@ -920,12 +920,8 @@ function dirPic(fg,action,ft,tdstyle)
    re  = /svg$/ ;
 
    if ( ! fg.match(re)) {
-      myimage = new Image()
-      myimage.src = fg
       if ( do_resize ) {
-         if (myimage.height != 0 ) {hgt = myimage.height * size_fig }
-         if (myimage.width  != 0 ) {wdt = myimage.width  * size_fig }
-         if ( wdt != 0 || hgt != 0 ){ fgs =" width="+wdt+" height="+hgt+" " }
+         fgs = " onload=\"this.width=this.naturalWidth*"+size_fig+";this.height=this.naturalHeight*"+size_fig+";\" "
       }
    }
    
